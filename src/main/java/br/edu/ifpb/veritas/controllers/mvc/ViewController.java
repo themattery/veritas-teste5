@@ -39,30 +39,30 @@ public class ViewController {
     // Página do usuário logado (dashboard)@GetMapping("/dashboard")
     @GetMapping("/dashboard")
     public ModelAndView dashboard() {
-    ModelAndView mv = new ModelAndView("dashboard");
+        ModelAndView mv = new ModelAndView("dashboard");
 
-        try {
-            mv.addObject("collegiateCount", collegiateService.findAll().size());
-    }   catch (Exception e) {
-            System.out.println("Erro CollegiateService: " + e.getMessage());
-            mv.addObject("collegiateCount", 0);
-    }
+            try {
+                mv.addObject("collegiateCount", collegiateService.findAll().size());
+        }   catch (Exception e) {
+                System.out.println("Erro CollegiateService: " + e.getMessage());
+                mv.addObject("collegiateCount", 0);
+        }
 
-        try {
-            mv.addObject("processoCount", processoService.findAll().size());
-    }   catch (Exception e) {
-            System.out.println("Erro ProcessoService: " + e.getMessage());
-            mv.addObject("processoCount", 0);
-    }
+            try {
+                mv.addObject("processoCount", processoService.findAll().size());
+        }   catch (Exception e) {
+                System.out.println("Erro ProcessoService: " + e.getMessage());
+                mv.addObject("processoCount", 0);
+        }
 
-        try {
-            mv.addObject("votoCount", votoService.findAll().size());
-    }   catch (Exception e) {
-            System.out.println("Erro VotoService: " + e.getMessage());
-            mv.addObject("votoCount", 0);
-    }
+            try {
+                mv.addObject("votoCount", votoService.findAll().size());
+        }   catch (Exception e) {
+                System.out.println("Erro VotoService: " + e.getMessage());
+                mv.addObject("votoCount", 0);
+        }
 
-    return mv;
+        return mv;
 }
 
 }
